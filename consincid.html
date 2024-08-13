@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #copy-rate {
+            background-color: #4CAF50; /* Green background */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+    </style>
+    <title>Copy Rate Button</title>
+</head>
+<body>
+
+<button id="copy-rate">Copy Rate</button>
+
+<script>
+    document.getElementById('copy-rate').addEventListener('click', function() {
+        const rate = "3.14"; // Example rate value
+        navigator.clipboard.writeText(rate).then(function() {
+            alert('Rate copied to clipboard: ' + rate);
+        }, function(err) {
+            console.error('Could not copy text: ', err);
+        });
+    });
+</script>
+
+</body>
+</html>
